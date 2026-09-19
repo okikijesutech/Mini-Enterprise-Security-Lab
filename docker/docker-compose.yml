@@ -1,0 +1,25 @@
+services:
+  lab-linux:
+    image: ubuntu:24.04
+    container_name: lab-linux
+    command: ["sleep", "infinity"]
+    networks:
+      - enterprise
+    volumes:
+      - lab-data:/lab-data
+
+  lab-client:
+    image: alpine:3.20
+    container_name: lab-client
+    command: ["sleep", "infinity"]
+    networks:
+      - enterprise
+
+networks:
+  enterprise:
+    name: mel-enterprise
+    driver: bridge
+
+volumes:
+  lab-data:
+    name: mel-lab-data
