@@ -1,2 +1,8 @@
 .env
-.ssh
+.env.*
+.ssh/
+*.key
+*.crt
+*.pem
+id_ed25519
+id_rsa

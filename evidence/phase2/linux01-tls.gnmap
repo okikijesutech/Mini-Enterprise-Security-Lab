@@ -1,0 +1,4 @@
+# Nmap 7.991 scan initiated Mon Sep 21 20:45:26 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -sV -p 443 --script ssl-enum-ciphers -oA linux01-tls 10.10.10.30
+Host: 10.10.10.30 ()	Status: Up
+Host: 10.10.10.30 ()	Ports: 443/open/tcp//ssl|http//nginx/
+# Nmap done at Mon Sep 21 20:45:39 2026 -- 1 IP address (1 host up) scanned in 13.89 seconds
