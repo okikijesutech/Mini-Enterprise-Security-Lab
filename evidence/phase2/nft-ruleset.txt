@@ -1,0 +1,22 @@
+table inet filter {
+	chain input {
+		type filter hook input priority filter; policy drop;
+		ct state established,related accept
+		ct state invalid drop
+		iif "lo" accept
+		icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, echo-request, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
+		icmp type echo-request limit rate 10/second burst 5 packets accept
+		iifname "enp0s3" udp sport 67 udp dport 68 accept
+		iifname "enp0s8" ip saddr 10.10.10.1 tcp dport 22 accept
+		iifname "enp0s8" tcp dport { 80, 443 } accept
+		limit rate 5/minute burst 5 packets log prefix "nft-input-drop: "
+	}
+
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+	}
+
+	chain output {
+		type filter hook output priority filter; policy accept;
+	}
+}

@@ -1,0 +1,28 @@
+#!/usr/sbin/nft -f
+flush ruleset
+
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
+	# 1. Housekeeping
+        ct state established,related accept
+        ct state invalid drop
+        iif lo accept
+
+	# 2. ICMP: IPv6 needs these to function at all
+	icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, echo-request, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept 
+	icmp type echo-request limit rate 10/second accept
+
+	# 3. DHCP replies on the NAT adapter 
+	iifname "enp0s3" udp sport 67 udp dport 68 accept
+
+	# 4. Services, only on the lab network adapter 
+	iifname "enp0s8" ip saddr 10.10.10.1 tcp dport 22 accept
+	iifname "enp0s8" tcp dport {80, 443} accept
+
+	# 5. Log what is about to be dropped (does not stop the packet)
+	limit rate 5/minute log prefix "nft-input-drop: "
+    }
+    chain forward { type filter hook forward priority 0; policy drop; }
+    chain output  { type filter hook output priority 0; policy accept; }
+}
