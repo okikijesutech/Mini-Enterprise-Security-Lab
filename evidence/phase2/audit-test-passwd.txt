@@ -1,0 +1,60 @@
+----
+type=PROCTITLE msg=audit(09/22/2026 21:47:15.618:375) : proctitle=/sbin/auditctl -R /etc/audit/audit.rules 
+type=SYSCALL msg=audit(09/22/2026 21:47:15.618:375) : arch=x86_64 syscall=sendto success=yes exit=1084 a0=0x3 a1=0x7ffeaa169a20 a2=0x43c a3=0x0 items=0 ppid=2635 pid=2654 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=auditctl exe=/usr/sbin/auditctl subj=unconfined key=(null) 
+type=CONFIG_CHANGE msg=audit(09/22/2026 21:47:15.618:375) : auid=sknap01 ses=1 subj=unconfined op=add_rule key=passwd_changes list=exit res=yes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:50:19.896:388) : proctitle=useradd audit_test 
+type=PATH msg=audit(09/22/2026 21:50:19.896:388) : item=0 name=/etc/passwd inode=526000 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:50:19.896:388) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:50:19.896:388) : arch=x86_64 syscall=openat success=yes exit=5 a0=AT_FDCWD a1=0x63a1bee84080 a2=O_RDWR|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC a3=0x0 items=1 ppid=2692 pid=2693 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=useradd exe=/usr/sbin/useradd subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:50:19.975:394) : proctitle=useradd audit_test 
+type=PATH msg=audit(09/22/2026 21:50:19.975:394) : item=4 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:19.975:394) : item=3 name=/etc/passwd inode=526000 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:19.975:394) : item=2 name=/etc/passwd+ inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:19.975:394) : item=1 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:19.975:394) : item=0 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:50:19.975:394) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:50:19.975:394) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x7ffc82b80110 a1=0x63a1bee84080 a2=0x7ffc82b80080 a3=0x100 items=5 ppid=2692 pid=2693 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=useradd exe=/usr/sbin/useradd subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:50:40.296:400) : proctitle=userdel audit_test 
+type=PATH msg=audit(09/22/2026 21:50:40.296:400) : item=0 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:50:40.296:400) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:50:40.296:400) : arch=x86_64 syscall=openat success=yes exit=5 a0=AT_FDCWD a1=0x5cfe7dc068c0 a2=O_RDWR|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC a3=0x0 items=1 ppid=2712 pid=2713 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=userdel exe=/usr/sbin/userdel subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:50:40.348:405) : proctitle=userdel audit_test 
+type=PATH msg=audit(09/22/2026 21:50:40.348:405) : item=4 name=/etc/passwd inode=526115 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:40.348:405) : item=3 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:40.348:405) : item=2 name=/etc/passwd+ inode=526115 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:40.348:405) : item=1 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:50:40.348:405) : item=0 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:50:40.348:405) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:50:40.348:405) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x7fff98c6a580 a1=0x5cfe7dc068c0 a2=0x7fff98c6a4f0 a3=0x100 items=5 ppid=2712 pid=2713 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=userdel exe=/usr/sbin/userdel subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:54:15.446:415) : proctitle=useradd -m audittest 
+type=PATH msg=audit(09/22/2026 21:54:15.446:415) : item=0 name=/etc/passwd inode=526115 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:54:15.446:415) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:54:15.446:415) : arch=x86_64 syscall=openat success=yes exit=5 a0=AT_FDCWD a1=0x5d0cdfa4f080 a2=O_RDWR|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC a3=0x0 items=1 ppid=2745 pid=2746 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=useradd exe=/usr/sbin/useradd subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:54:15.501:419) : proctitle=useradd -m audittest 
+type=PATH msg=audit(09/22/2026 21:54:15.501:419) : item=4 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:15.501:419) : item=3 name=/etc/passwd inode=526115 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:15.501:419) : item=2 name=/etc/passwd+ inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:15.501:419) : item=1 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:15.501:419) : item=0 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:54:15.501:419) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:54:15.501:419) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x7ffe7d0af8b0 a1=0x5d0cdfa4f080 a2=0x7ffe7d0af820 a3=0x100 items=5 ppid=2745 pid=2746 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=useradd exe=/usr/sbin/useradd subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:54:38.761:426) : proctitle=userdel -r audittest 
+type=PATH msg=audit(09/22/2026 21:54:38.761:426) : item=0 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:54:38.761:426) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:54:38.761:426) : arch=x86_64 syscall=openat success=yes exit=5 a0=AT_FDCWD a1=0x6347958838c0 a2=O_RDWR|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC a3=0x0 items=1 ppid=2762 pid=2763 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=userdel exe=/usr/sbin/userdel subj=unconfined key=passwd_changes 
+----
+type=PROCTITLE msg=audit(09/22/2026 21:54:38.825:432) : proctitle=userdel -r audittest 
+type=PATH msg=audit(09/22/2026 21:54:38.825:432) : item=4 name=/etc/passwd inode=526114 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:38.825:432) : item=3 name=/etc/passwd inode=526116 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:38.825:432) : item=2 name=/etc/passwd+ inode=526114 dev=fc:00 mode=file,644 ouid=root ogid=root rdev=00:00 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:38.825:432) : item=1 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(09/22/2026 21:54:38.825:432) : item=0 name=/etc/ inode=524289 dev=fc:00 mode=dir,755 ouid=root ogid=root rdev=00:00 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(09/22/2026 21:54:38.825:432) : cwd=/home/sknap01 
+type=SYSCALL msg=audit(09/22/2026 21:54:38.825:432) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x7ffd4e636d40 a1=0x6347958838c0 a2=0x7ffd4e636cb0 a3=0x100 items=5 ppid=2762 pid=2763 auid=sknap01 uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=userdel exe=/usr/sbin/userdel subj=unconfined key=passwd_changes 
