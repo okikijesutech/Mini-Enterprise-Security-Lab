@@ -45,15 +45,15 @@ The laboratory assets are divided into three primary security zones.
 
 # 4. Master Asset Inventory
 
-| Asset ID | Hostname   | IP Address    | Security Zone           | Primary Role               | Status  |
-| -------- | ---------- | ------------- | ----------------------- | -------------------------- | ------- |
-| AST-001  | DC01       | `10.10.10.10` | Enterprise              | Active Directory + DNS     | Planned |
-| AST-002  | WIN01      | `10.10.10.20` | Enterprise              | Windows domain client      | Planned |
-| AST-003  | LINUX01    | `10.10.10.30` | Enterprise              | Linux server               | Planned |
-| AST-004  | JUICE-SHOP | `10.10.10.40` | Enterprise              | Vulnerable web application | Planned |
-| AST-005  | KALI       | `10.10.20.10` | Security / Attacker     | Security testing           | Planned |
-| AST-006  | MONITOR    | `10.10.30.10` | Monitoring / Management | Suricata / monitoring      | Planned |
-| AST-007  | SCANNER    | `10.10.30.20` | Monitoring / Management | OpenVAS / Greenbone        | Planned |
+| Asset ID | Hostname   | IP Address    | Security Zone             | Primary Role               | Status                                                 |
+| -------- | ---------- | ------------- | ------------------------- | -------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------ | --- |
+| AST-001  | DC01       | `10.10.10.10` | Enterprise                | Active Directory + DNS     | Planned                                                |
+| AST-002  | WIN01      | `10.10.10.20` | Enterprise                | Windows domain client      | Planned                                                |
+| AST-003  | LINUX01    | Deployed      | Ubuntu Server 26.04.1 LTS | VirtualBox VM              | enp0s3 (NAT, DHCP), enp0s8 (host-only, 10.10.10.30/24) | Web server (nginx, TLS 1.2/1.3), SSH (key-only, hardened), auditd, nftables firewall |     |
+| AST-004  | JUICE-SHOP | `10.10.10.40` | Enterprise                | Vulnerable web application | Planned                                                |
+| AST-005  | KALI       | `10.10.20.10` | Security / Attacker       | Security testing           | Planned                                                |
+| AST-006  | MONITOR    | `10.10.30.10` | Monitoring / Management   | Suricata / monitoring      | Planned                                                |
+| AST-007  | SCANNER    | `10.10.30.20` | Monitoring / Management   | OpenVAS / Greenbone        | Planned                                                |
 
 ---
 
