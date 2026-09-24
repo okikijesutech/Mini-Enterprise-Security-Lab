@@ -1,0 +1,4 @@
+# Nmap 7.991 scan initiated Wed Sep 23 19:30:20 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -sS -sV -p- -oA linux01-after 10.10.10.30
+Host: 10.10.10.30 ()	Status: Up
+Host: 10.10.10.30 ()	Ports: 22/open/tcp//ssh//OpenSSH 10.2p1 Ubuntu 2ubuntu3.6 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//nginx/, 443/open/tcp//ssl|http//nginx/	Ignored State: filtered (65532)
+# Nmap done at Wed Sep 23 19:33:06 2026 -- 1 IP address (1 host up) scanned in 165.21 seconds
